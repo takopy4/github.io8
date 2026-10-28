@@ -1,4 +1,4 @@
-// 1. Создайте форму в Formcarry и замените адрес ниже на выданный endpoint.
+
 const FORM_ENDPOINT = 'https://formcarry.com/s/qi9heKg27Qb';
 const STORAGE_KEY = 'feedback-form-draft-v1';
 
