@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f6fb">
+  <title>Обратная связь</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="landing">
+    <section class="welcome" aria-labelledby="page-title">
+      <h1 id="page-title">Форма обратной связи</h1>
+      <button class="open-form" id="open-contact" type="button">Открыть форму</button>
+    </section>
+  </main>
+
+  <dialog class="contact-modal" id="contact-modal" aria-labelledby="contact-title" aria-describedby="form-status">
+    <section class="contact-card">
+      <button class="modal-close" id="close-contact" type="button" aria-label="Закрыть форму">×</button>
+      <header class="form-heading">
+        <h2 id="contact-title">Заполните форму</h2>
+        <p class="form-hint">Введите данные и нажмите «Отправить».</p>
+      </header>
+
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <label class="form-field">
+            <span>ФИО <b aria-hidden="true">*</b></span>
+            <input name="fullName" type="text" placeholder="Иван Иванов" autocomplete="name" required minlength="2">
+          </label>
+          <label class="form-field">
+            <span>Email <b aria-hidden="true">*</b></span>
+            <input name="email" type="email" placeholder="name@example.com" autocomplete="email" required>
+          </label>
+          <label class="form-field">
+            <span>Телефон <b aria-hidden="true">*</b></span>
+            <input name="phone" type="tel" placeholder="+7 900 000-00-00" autocomplete="tel" required pattern="[+0-9()\s-]{7,24}">
+          </label>
+          <label class="form-field">
+            <span>Организация</span>
+            <input name="organization" type="text" placeholder="Название компании" autocomplete="organization">
+          </label>
+          <label class="form-field form-field--wide">
+            <span>Сообщение <b aria-hidden="true">*</b></span>
+            <textarea name="message" rows="2" placeholder="Расскажите, чем мы можем помочь" required minlength="5"></textarea>
+          </label>
+        </div>
+        <div class="form-bottom">
+          <label class="consent">
+            <input name="consent" type="checkbox" value="yes" required>
+            <span>Согласен(на) с <a href="#privacy-note" id="policy-link" aria-expanded="false">политикой обработки персональных данных</a></span>
+          </label>
+          <button class="submit-button" id="submit-contact" type="submit">Отправить <span aria-hidden="true">↗</span></button>
+          <p class="privacy-note" id="privacy-note" hidden>Данные используются только для ответа на ваше обращение. Перед публикацией замените этот текст на политику вашей организации.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+  </dialog>
+</body>
+</html>
