@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+:root{color-scheme:light;--ink:#202a3c;--muted:#758196;--accent:#3858d6;--paper:#f4f6fb;--line:#e3e8f1}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{font-family:'DM Sans',Arial,sans-serif;color:var(--ink);background:var(--paper)}
+button,input,textarea{font:inherit}
+.landing{min-height:100svh;display:grid;place-items:center;padding:28px 18px;background:#f5f6f8}
+.welcome{width:min(100%,620px);padding:42px 30px;text-align:center;border:1px solid #e2e5eb;border-radius:16px;background:#fff;box-shadow:0 8px 26px rgba(25,38,60,.06)}
+h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:500;letter-spacing:-.025em}
+h1{margin:0;font-size:clamp(30px,5vw,46px);line-height:1.15}
+.open-form{min-height:46px;margin-top:22px;padding:0 22px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;background:var(--accent);color:white;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.open-form:hover{background:#2e4bc2}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(86,115,231,.42);outline-offset:3px}
+.contact-modal{width:min(620px,calc(100% - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:0;overflow:hidden;border:0;border-radius:23px;background:#fff;color:var(--ink);box-shadow:0 28px 90px rgba(16,27,51,.25)}
+.contact-modal::backdrop{background:rgba(18,27,43,.56);backdrop-filter:blur(5px)}
+.contact-card{position:relative;max-height:calc(100dvh - 24px);overflow:auto;padding:29px 32px 26px}
+.modal-close{position:absolute;top:18px;right:18px;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:#fff;color:#8993a4;font-size:24px;line-height:1;cursor:pointer;transition:background .2s,color .2s}
+.modal-close:hover{background:#f4f6fa;color:var(--ink)}
+.form-heading{margin:0 48px 20px 0}
+h2{margin:0;font-size:34px;line-height:1.06}
+.form-hint{margin:7px 0 0;color:var(--muted);font-size:12px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px 12px}
+.form-field{min-width:0;display:flex;flex-direction:column;gap:5px;color:#4e5a6d;font-size:11px;font-weight:600}
+.form-field b{color:#d84a58}
+.form-field--wide{grid-column:1/-1}
+.form-field input,.form-field textarea{width:100%;min-width:0;min-height:41px;padding:9px 11px;border:1px solid #e1e6ef;border-radius:10px;background:#fbfcfe;color:var(--ink);font-size:12px;font-weight:400;outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#a5adbb}
+.form-field input:focus,.form-field textarea:focus{border-color:#7188ed;background:#fff;box-shadow:0 0 0 3px rgba(56,88,214,.1)}
+.form-field textarea{height:65px;min-height:65px;resize:vertical}
+.form-bottom{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px 14px;margin-top:14px}
+.consent{display:flex;align-items:flex-start;gap:8px;color:#596476;font-size:10px;line-height:1.45}
+.consent input{flex:0 0 auto;width:15px;height:15px;margin:1px 0 0;accent-color:var(--accent)}
+.consent a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.submit-button{min-height:43px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:11px;background:var(--accent);color:white;font-size:12px;font-weight:600;cursor:pointer;transition:background .2s,transform .2s,opacity .2s}
+.submit-button:hover:not(:disabled){background:#2e4bc2;transform:translateY(-1px)}
+.submit-button:disabled{opacity:.6;cursor:wait}
+.privacy-note,.form-status{grid-column:1/-1;margin:0;font-size:11px;line-height:1.45}
+.privacy-note{color:#697588}
+.form-status:empty{display:none}
+.form-status.is-success{color:#237653}
+.form-status.is-error{color:#bd3344}
+
+@media(max-width:520px){
+  .landing{padding:20px 14px}
+  .welcome{padding:30px 18px}
+  h1{font-size:clamp(28px,9vw,38px)}
+  .open-form{min-height:44px;margin-top:18px}
+  .contact-modal{width:calc(100% - 16px);max-height:calc(100dvh - 16px);border-radius:19px}
+  .contact-card{max-height:calc(100dvh - 16px);overflow:hidden;padding:19px 17px 16px}
+  .modal-close{top:11px;right:11px;width:30px;height:30px}
+  .form-heading{margin:0 36px 12px 0}
+  h2{font-size:28px}
+  .form-hint{margin-top:5px;font-size:11px}
+  .form-grid{gap:7px 8px}
+  .form-field{gap:3px;font-size:10px}
+  .form-field input{min-height:36px;padding:7px 8px;font-size:11px}
+  .form-field textarea{height:54px;min-height:54px;padding:7px 8px;font-size:11px}
+  .form-bottom{gap:7px 9px;margin-top:9px}
+  .consent{gap:6px;font-size:9px;line-height:1.35}
+  .consent input{width:14px;height:14px}
+  .submit-button{min-height:38px;padding:0 12px;font-size:11px}
+  .privacy-note,.form-status{font-size:10px}
+}
+@media(max-width:360px){
+  .contact-card{padding:16px 13px 13px}
+  h2{font-size:25px}
+  .form-grid{gap:6px}
+  .form-field input{min-height:34px}
+  .form-field textarea{height:49px;min-height:49px}
+  .form-bottom{grid-template-columns:1fr}
+  .submit-button{width:100%}
+}
+@media(max-height:640px) and (max-width:520px){
+  .contact-card{padding-top:13px;padding-bottom:11px}
+  .form-heading{margin-bottom:8px}
+  .form-hint{display:none}
+  .form-grid{gap:5px 7px}
+  .form-field input{min-height:32px}
+  .form-field textarea{height:45px;min-height:45px}
+  .form-bottom{margin-top:7px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
